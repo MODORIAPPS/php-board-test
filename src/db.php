@@ -1,8 +1,8 @@
  <?php
     session_start();
 
-    $db = new mysqli("127.0.0.1:3306", "root", "sample-pwd");
-    $db->set_charset("utf8");
+    $db = new mysqli("db", "root", "sample-pwd", "services", 3306);
+    // $db->set_charset("utf8");
 
     function mq($sql)
     {
