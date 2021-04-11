@@ -1,0 +1,26 @@
+version: "3.1"
+services:
+    db:
+        image: mysql:8.0.23
+        command: --default-authentication-plugin=mysql_native_password
+        restart: unless-stopped
+        ports:
+            - "3306:3306"
+        # DEFAULT PORT : 3306
+        environment:
+            MYSQL_ROOT_PASSWORD: sample-pwd
+        volumes:
+            - ./db:/docker-entrypoint-initdb.d
+    
+    app:
+        restart: unless-stopped
+        build: ./src
+        ports:
+            - "8000:80"
+        volumes:
+            - ./src:/var/www/html/
+        # command: bash -c "docker-php-ext-install mysqli && apachectl restart"
+
+
+
+        
