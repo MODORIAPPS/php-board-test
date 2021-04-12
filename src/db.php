@@ -9,5 +9,4 @@
         global $db;
         return $db->query($sql);
     }
-
-    ?>
+?>

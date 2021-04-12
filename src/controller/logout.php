@@ -1,6 +1,8 @@
 <?php
+session_start();
 include "../db.php";
 session_destroy();
+$_SESSION = [];
 ?>
 <meta charset="utf-8">
 <script>
