@@ -64,15 +64,16 @@ include "./db.php";
             while ($row = $sql->fetch_array()) {
                 $post_id = $row['post_id'];
                 if ($_SESSION['user_name'] == $row['user_name']) {
-                    echo "<li>
+                    echo "<li id='" . $row['post_id'] . "'>
                     <p>작성자 : " . $row['user_name'] . "</p>
                     <div>
                         <h2>제목 : " . $row['title'] . "<h2>내용 : <textarea readonly >" . $row['content'] . "</textarea>
                     </div>
                     <button onClick='deletePost($post_id)'>삭제</button>
+                    <button onClick='updatePost($post_id)'>수정</button>
                 </li>";
                 } else {
-                    echo "<li>
+                    echo "<li id='" . $row['post_id'] . "'>
                     <p>작성자 : " . $row['user_name'] . "</p>
                     <div>
                         <h2>제목 : " . $row['title'] . "<h2>내용 : <textarea readonly >" . $row['content'] . "</textarea>
@@ -90,6 +91,11 @@ include "./db.php";
             if (result) {
                 location.href = "/controller/post/delete_post.php?post_id=<?php echo $post_id ?>";
             }
+        }
+
+        function updatePost($post_id){
+            var title = document.getElementBy
+            var content = document.getElementById($post_id).div.textarea
         }
     </script>
 </body>
