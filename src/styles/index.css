@@ -1,0 +1,48 @@
+button {
+    background-color: #74d6d7;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.toolbar {
+}
+
+.post_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.post_list > li {
+    border-radius: 10px;
+    background-color: grey;
+    margin: 20px 0;
+}
+
+.post_list > li > div {
+    padding: 15px;
+}
+
+.post_list > li > div > textarea {
+    width: 80%;
+}
+
+.post_list > li > div > p {
+    display: block;
+    /* float: right; */
+}
+
+.actions {
+    display: block;
+}
+
+.divider {
+    margin: 30px 0;
+    background-color: grey;
+    height: 1px;
+    width: 100%;
+}
